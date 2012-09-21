@@ -28,9 +28,12 @@ let s:c.scope_aliases.cs = get(s:c.scope_aliases, 'cs','c')
 let s:c.scope_aliases.xhtml = get(s:c.scope_aliases, 'xhtml', 'html')
 let s:c.scope_aliases.html = get(s:c.scope_aliases, 'html', 'javascript')
 let s:c.scope_aliases.php = get(s:c.scope_aliases, 'php', 'php,html,javascript')
+let s:c.scope_aliases.smarty = get(s:c.scope_aliases, 'smarty', 'smarty,php,html,javascript,css')
 let s:c.scope_aliases.ur = get(s:c.scope_aliases, 'ur', 'html,javascript')
 let s:c.scope_aliases.mxml = get(s:c.scope_aliases, 'mxml', 'actionscript')
 let s:c.scope_aliases.eruby = get(s:c.scope_aliases, 'eruby', 'eruby-rails,html')
+let s:c.scope_aliases.css = get(s:c.scope_aliases, 'css', 'css')
+let s:c.scope_aliases.less = get(s:c.scope_aliases, 'less', 'less,css')
 
 " set this to "\<tab>" to make snipmate not swallow tab (make sure to not have
 " expandtab set). Remember that you can always enter tabs by <c-v> <tab> then
@@ -633,7 +636,7 @@ fun! snipMate#GetSnippetFiles(mustExist, scopes, trigger)
 endf
 
 fun! snipMate#EvalGuard(guard)
-	" left: everything left of expansion 
+	" left: everything left of expansion
 	" word: the expanded word
 	" are guaranteed to be in scpe
 
